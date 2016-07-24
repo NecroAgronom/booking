@@ -1,0 +1,45 @@
+.green-btn {
+    font-size: 16px;
+    color: #35d166;
+    border: #35d166 solid 1px;
+    background: inherit;
+
+    padding: 5px;
+}
+
+
+.green-btn:hover {
+    color: white;
+    background: #35d166;
+}
+
+.orange-btn {
+    font-size: 16px;
+    color: #d1a800;
+    border: #d1a800 solid 1px;
+    background: inherit;
+
+    padding: 5px;
+}
+
+
+.orange-btn:hover {
+    color: white;
+    background: #d1a800;
+}
+
+.red-btn {
+    font-size: 16px;
+    color: crimson;
+    border: crimson solid 1px;
+    background: inherit;
+    cursor: not-allowed;
+
+    padding: 5px;
+}
+
+
+.red-btn:hover {
+    color: white;
+    background: crimson;
+}

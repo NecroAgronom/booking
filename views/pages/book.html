@@ -1,0 +1,47 @@
+<h2 style="text-align: center">Бронь билета № <?=$data['seat']['id']?> ( сектор <?=$data['seat']['s']?>, ряд <?=$data['seat']['r']?>, место <?=$data['seat']['m']?> )</h2>
+
+
+
+<br>
+<form  action="" method="POST">
+    <input type="hidden" name="id"  value="<?=$data['seat']['id']?>"/>
+
+    <div class="form-group">
+        <label for="name">Ваше Имя</label>
+        <input type="text" id="name" style="width: 500px;" name="name" value="" class="form-control" required/>
+    </div>
+
+    <br>
+
+
+    <input type="submit" style="width: 500px;" value="Забронировать" name="book" class="green-btn"/><br><br>
+
+</form>
+<form action="" method="POST">
+    <input type="hidden" name="id"  value="<?=$data['seat']['id']?>"/>
+    <input type="hidden" name="status"  value="<?=$data['seat']['status']?>"/>
+    <input type="submit" style="width: 500px;" value="Отмена" name="cancel" class="red-btn"/>
+</form>
+
+
+
+<script>
+    if (!!window.EventSource) {
+        var source = new EventSource('/stream.php?id=<?=$data['seat']['id']?>');
+    }
+    source.addEventListener('message', function(e) {
+        window.location.href = "/pages/fail";
+        console.log(e.data);
+    }, false);
+
+    source.addEventListener('open', function(e) {
+        console.log('opened');
+    }, false);
+
+    source.addEventListener('error', function(e) {
+        if (e.readyState == EventSource.CLOSED) {
+            console.log('closed');
+        }
+    }, false);
+</script>
+

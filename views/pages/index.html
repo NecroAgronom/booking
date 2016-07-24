@@ -1,0 +1,39 @@
+<button class="green-btn">Свободно</button><button class="orange-btn">Сейчас бронируется</button><button class="red-btn">Есть бронь</button>
+
+<?php foreach($data['stadium'] as $sector) {?>
+<h2 style="text-align: center;">Сектор <?=$sector[1][1]['s']?></h2> <button onclick="location.reload()">Обновить</button>
+<table class="table table-stripped" style="width: 100%;">
+    <?php foreach( $sector as $row ) {?>
+    <tr>
+        <?php for($i = 0;$i < count($row);$i++){ ?>
+        <td><a <?php if($row[$i]['status'] == 0){?> href="/pages/book/<?=$row[$i]['id']?>" <?php }?> >
+            <button class="
+            <?php if($row[$i]['status'] == 0 and $row[$i]['booking'] == 0){?>
+            green-btn
+            <?php }elseif($row[$i]['status'] == 0 and $row[$i]['booking'] > 0){?>
+             orange-btn
+             <?php }elseif($row[$i]['status'] == 2 ){?>
+             red-btn
+              <?php } ?>
+              ">
+
+            ряд <?=$row[$i]['r'] ?><br>
+            место <?=$row[$i]['m'] ?><br>
+        </button></a></td>
+        <?php } ?>
+    </tr>
+
+    <?php } ?>
+</table><br>
+
+
+<?php } ?>
+
+
+
+
+
+
+
+
+

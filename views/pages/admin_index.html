@@ -1,0 +1,30 @@
+<h3>Картины</h3><br>
+
+<table class="table table-stripped" style="width: 400px;">
+    <tr>
+        <td><b>ID</b></td>
+        <td><b>Сектор</b></td>
+        <td><b>Ряд</b></td>
+        <td><b>Место</b></td>
+        <td><b>Статус</b></td>
+        <td><b>Имя</b></td>
+        <td><b>Сейчас бронирует</b></td>
+    </tr>
+    <?php foreach( $data['stadium'] as $seat) {?>
+    <tr>
+        <td><b><?=$seat['id'] ?></b></td>
+        <td><b><?=$seat['s'] ?></b></td>
+        <td><b><?=$seat['r'] ?></b></td>
+        <td><b><?=$seat['m'] ?></b></td>
+        <td><b><?=$seat['status'] ?></b></td>
+        <td><b><?=$seat['name'] ?></b></td>
+        <td><b><?=$seat['booking'] ?></b></td>
+        <td align="right">
+            <a href="/admin/pages/edit/<?=$seat['id'] ?>">
+                <button class="orange-btn">редактировать</button>
+            </a>
+
+        </td>
+    </tr>
+    <?php } ?>
+</table><br>

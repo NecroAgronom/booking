@@ -1,0 +1,36 @@
+<h3>Редактирование</h3><br>
+
+<form  action="" method="POST">
+    <input type="hidden" name="id"  value=" <?=$data['seat']['id']?> "/>
+
+    <div class="form-group">
+        <label for="s">Сектор</label>
+        <input type="text" id="s" style="width: 500px;" name="s" value=" <?=$data['seat']['s']?> " class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="r">Ряд</label>
+        <input type="text" id="r" style="width: 500px;" name="r" value=" <?=$data['seat']['r']?> " class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="m">Место</label>
+        <input type="text" id="m" style="width: 500px;" name="m" value=" <?=$data['seat']['m']?> " class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="status">Сатус</label>
+        <input type="text" id="status" style="width: 500px;" name="status" value=" <?=$data['seat']['status']?> " class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="name">Имя</label>
+        <input type="text" id="name" style="width: 500px;" name="name" value=" <?=$data['seat']['name']?> " class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="booking">Сейчас бронирует</label>
+        <input type="text" id="booking" style="width: 500px;" name="booking" value=" <?=$data['seat']['booking']?> " class="form-control"/>
+    </div>
+
+    <br><br>
+
+
+    <input type="submit" style="width: 500px;" class="green-btn"/>
+
+</form>
