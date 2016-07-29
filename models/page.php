@@ -3,12 +3,13 @@ Class Page extends Model{
 
     public function getStadium(){
 
-        for($i = 1;$i <= Config::get('sector_quantity');$i++){
-            for($j = 1;$j <= Config::get('rows_in_sect_quantity');$j++){
-                $sql = "select id, s, r, m, status, booking from stadium where s = '{$i}' and r = '{$j}' ";
-                $result[$i][$j] = $this->db->query($sql);
-            }
+        $sql = "select * from stadium ";
+        $a = $this->db->query($sql);
+        foreach($a as $array){
+            $result[(int)$array['s']][(int)$array['r']][] = $array;
         }
+        unset($a);
+
         if($result){
             return $result;
         } else {
